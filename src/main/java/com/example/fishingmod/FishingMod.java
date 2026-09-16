@@ -9,7 +9,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -44,8 +44,8 @@ public class FishingMod {
             ENTITIES.register("bass", () -> EntityType.Builder.of(FishEntity::new, MobCategory.WATER_CREATURE)
                     .sized(0.4F, 0.3F).clientTrackingRange(8).updateInterval(10).build("bass"));
 
-        public static final RegistryObject<SpawnEggItem> BASS_SPAWN_EGG =
-            ITEMS.register("bass_spawn_egg", () -> new SpawnEggItem(FISH.get(), 0x6B8E6B, 0x2F4F2F,
+           public static final RegistryObject<ForgeSpawnEggItem> BASS_SPAWN_EGG =
+            ITEMS.register("bass_spawn_egg", () -> new ForgeSpawnEggItem(FISH, 0x6B8E6B, 0x2F4F2F,
                     new Item.Properties()));
 
     public FishingMod() {
