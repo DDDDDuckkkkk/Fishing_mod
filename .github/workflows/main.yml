@@ -20,7 +20,7 @@ jobs:
       - name: Generate wrapper and build
         run: |
           gradle-8.1.1/bin/gradle wrapper --gradle-version 8.1.1
-          ./gradlew build --no-daemon
+          ./gradlew build --no-daemon || (rm -rf ~/.gradle/caches/forge_gradle && ./gradlew build --no-daemon)
 
       - name: Upload jar
         uses: actions/upload-artifact@v4
