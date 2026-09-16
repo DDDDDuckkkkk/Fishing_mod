@@ -8,8 +8,6 @@ import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.pathfinder.PathNavigation;
-import net.minecraft.world.level.pathfinder.WaterBoundPathNavigation;
 
 public class FishEntity extends WaterAnimal {
 
@@ -31,12 +29,7 @@ public class FishEntity extends WaterAnimal {
         this.goalSelector.addGoal(0, new PanicGoal(this, 1.5));
         // TODO: 接 GeckoLib 动画后，中鱼时在此切换对应游动/挣扎动画
     }
-
-    @Override
-    protected PathNavigation createNavigation(Level level) {
-        return new WaterBoundPathNavigation(this, level);
-    }
-
+    
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
